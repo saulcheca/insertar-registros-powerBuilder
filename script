@@ -1,0 +1,22 @@
+create database factura
+use factura
+go
+
+/*  CREAR TABLA CLIENTE*/
+create table cliente
+(
+id_cliente char(7)primary key,
+nombre varchar(30),
+direccion varchar(50),
+telefono char(9)
+)
+go
+/* CREAR PROCEDIMIENTO ALMACENADO INSERTAR*/
+create proc sp_insertar_cliente
+(
+@id_cliente char(7),
+@nombre varchar(30),
+@direccion varchar(50),
+@telefono char(9)
+)as
+insert into cliente values (@id_cliente,@nombre,@direccion,@telefono)
